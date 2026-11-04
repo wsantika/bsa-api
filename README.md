@@ -28,7 +28,7 @@ Proyek ini menggunakan variabel lingkungan (`.env`) untuk menjaga keamanan krede
    ```
 3. Jalankan aplikasi:
    ```bash
-   dotnet run --project bsa-api/bsa-api.csproj
+   dotnet run
    ```
 4. Buka Swagger UI di browser:
    - `http://localhost:5104/swagger` atau `https://localhost:7294/swagger`
