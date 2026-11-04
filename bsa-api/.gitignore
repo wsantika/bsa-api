@@ -1,0 +1,11 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build & Output
+bin/
+obj/
+*.user
+*.suo
+*.log
