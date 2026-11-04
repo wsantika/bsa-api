@@ -1,6 +1,86 @@
-@bsa_api_HostAddress = http://localhost:5104
+@HostAddress = http://localhost:5104
 
-GET {{bsa_api_HostAddress}}/weatherforecast/
+### ==========================================
+### 🏷️ KATEGORI (PARENT)
+### ==========================================
+
+### 1. GET List Kategori (Pagination)
+GET {{HostAddress}}/api/Kategori?page=1&pageSize=10
 Accept: application/json
 
-###
+### 2. GET Single Kategori by ID
+GET {{HostAddress}}/api/Kategori/1
+Accept: application/json
+
+### 3. POST Tambah Kategori
+POST {{HostAddress}}/api/Kategori
+Content-Type: application/json
+
+{
+  "Nama": "Buku & Alat Tulis"
+}
+
+### 4. PATCH Ubah Kategori
+PATCH {{HostAddress}}/api/Kategori/1
+Content-Type: application/json
+
+{
+  "Nama": "Elektronik & Gadget"
+}
+
+### 5. DELETE Kategori
+DELETE {{HostAddress}}/api/Kategori/4
+Accept: application/json
+
+
+### ==========================================
+### 📦 PRODUK (CHILD)
+### ==========================================
+
+### 6. GET List Produk (Pagination)
+GET {{HostAddress}}/api/Produk?page=1&pageSize=10
+Accept: application/json
+
+### 7. GET Single Produk by ID
+GET {{HostAddress}}/api/Produk/1
+Accept: application/json
+
+### 8. POST Tambah Produk
+POST {{HostAddress}}/api/Produk
+Content-Type: application/json
+
+{
+  "Nama": "Mechanical Keyboard",
+  "IdKategori": 1
+}
+
+### 9. PATCH Ubah Produk
+PATCH {{HostAddress}}/api/Produk/1
+Content-Type: application/json
+
+{
+  "Nama": "Laptop Gaming ROG",
+  "IdKategori": 1
+}
+
+### 10. DELETE Produk
+DELETE {{HostAddress}}/api/Produk/8
+Accept: application/json
+
+
+### ==========================================
+### ⚠️ ERROR CASES
+### ==========================================
+
+### Error 404: Kategori Tidak Ditemukan
+GET {{HostAddress}}/api/Kategori/999
+Accept: application/json
+
+### Error 400: Validasi Nama Kosong
+POST {{HostAddress}}/api/Produk
+Content-Type: application/json
+
+{
+  "Nama": "",
+  "IdKategori": 1
+}

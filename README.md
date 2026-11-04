@@ -33,7 +33,13 @@ Proyek ini menggunakan variabel lingkungan (`.env`) untuk menjaga keamanan krede
 4. Buka Swagger UI di browser:
    - `http://localhost:5104/swagger` atau `https://localhost:7294/swagger`
 
-## Endpoint Kategori
+## Dokumentasi Endpoint
+Dokumentasi lengkap mengenai request header, body, query param, serta contoh payload respon JSON untuk seluruh endpoint dapat dilihat pada:
+- **[docs/ENDPOINTS.md](docs/ENDPOINTS.md)** (Dokumentasi Detail & Skema Respon JSON)
+- **[bsa-api.http](bsa-api.http)** (Kumpulan Request Siap Uji untuk Visual Studio / VS Code REST Client)
+- **Swagger UI:** Akses langsung di `http://localhost:5104/swagger` saat aplikasi dijalankan.
+
+### Ringkasan Endpoint Kategori (Parent)
 | Method | URL | Keterangan |
 |--------|-----|------------|
 | GET | /api/Kategori?page=1&pageSize=10 | List + DetailList produk (pagination) |
